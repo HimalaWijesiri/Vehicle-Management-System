@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-12 text-center"><h1>Details</h1></div>
+</div>
+<div class="row" >
+    
+    <table class="table">
+        <thead>
+            <th>
+                Vehicle Name
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Options
+            </th>
+            <tbody>   
+                <tr *ngFor="let details of details">
+                    <td>{{details.v_name}}</td>
+                    <td>{{details.date}}</td>
+                    <td>{{details.description}}</td>
+                    <td>{{details.amount}}</td>
+                    <td><a href="Update-Vehicle_details/{{details._id}}" class="btn btn-warning">Edit</a> |<button class="btn btn-danger" (click)="deldetail(details)">Delete</button></td>
+            </tr>
+        </tbody>
+</table>
+</div>

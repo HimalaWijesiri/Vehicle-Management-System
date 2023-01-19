@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-12 text-center"><h2>Vehicle List</h2></div>
+</div>
+
+<div class="row">
+  <table class="table">
+    <thead>
+      <th>Vehicle Name</th>
+      <th>Model</th>
+      <th>Model Number</th>
+      <th>Brand</th>
+      <th>Eng Capacity</th>
+      <th>Transmission</th>
+      <th>Manufacture Year</th>
+      <th>Mileage</th>
+      <th>Amount</th>
+      <th>Options</th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let vehicles of vehicles">
+        <td>{{ vehicles.vehiclename }}</td>
+        <td>{{ vehicles.model }}</td>
+        <td>{{ vehicles.modelnum }}</td>
+        <td>{{ vehicles.brand }}</td>
+        <td>{{ vehicles.engcap }}</td>
+        <td>{{ vehicles.transmission }}</td>
+        <td>{{ vehicles.yom }}</td>
+        <td>{{ vehicles.mileage }}</td>
+        <td>{{ vehicles.price }}</td>
+        <td>
+          <a href="update-vehicle/{{ vehicles._id }}" class="btn btn-success"
+            >Edit</a
+          >|<button class="btn btn-danger" (click)="delvehicle(vehicles)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

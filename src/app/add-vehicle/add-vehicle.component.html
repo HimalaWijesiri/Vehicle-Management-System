@@ -1,0 +1,115 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-9">
+      <div class="card mt-5 p-3 shadow">
+        <h1><b>Add Vehicle</b></h1>
+        <hr />
+        <br />
+        <form
+          class="row g-3"
+          style="font-weight: 5 00; font-size: medium"
+          [formGroup]="addvehicleForm"
+        >
+          <div [ngClass]="className" role="alert">
+            {{ message }}
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Vehicle Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="vname"
+              formControlName="vehiclename"
+            />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Model</label>
+            <input
+              type="text"
+              class="form-control"
+              id="model"
+              formControlName="model"
+            />
+          </div>
+          <div class="col-6">
+            <label class="form-label">Model Number</label>
+            <input
+              type="text"
+              class="form-control"
+              id="mnum"
+              formControlName="modelnum"
+            />
+          </div>
+          <div class="col-6">
+            <label class="form-label">Brand</label>
+            <input
+              type="text"
+              class="form-control"
+              id="brand"
+              formControlName="brand"
+            />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Engine Capacity</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputCity"
+              formControlName="engcap"
+            />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Transmission</label>
+            <select
+              id="transmission"
+              class="form-select"
+              formControlName="transmission"
+            >
+              <option selected>- Select -</option>
+              <option>Auto</option>
+              <option>Manual</option>
+              <option>Tiptronic</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Year of Manufacture</label>
+            <input
+              type="date"
+              class="form-control"
+              id="yom"
+              formControlName="yom"
+            />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Current Mileage</label>
+            <input
+              type="text"
+              class="form-control"
+              id="mileage"
+              formControlName="mileage"
+              placeholder="10000KMs"
+            />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Amount</label>
+            <input
+              type="text"
+              class="form-control"
+              id="price"
+              formControlName="price"
+            />
+          </div>
+          <div class="col-12">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              (click)="addvehicle()"
+            >
+              Add Vehicle
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

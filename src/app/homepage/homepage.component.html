@@ -1,0 +1,48 @@
+<h2 style="margin-left: 45%; color: blue">Recently Added Vehicles</h2>
+
+<mat-grid-list cols="1" rowHeight="300px" col>
+  <mat-grid-tile>
+    <mat-card
+      class="example-card"
+      style="width: 25%"
+      *ngFor="let vehicles of vehicles"
+    >
+      <mat-card-header>
+        <mat-card-title>{{ vehicles.vehiclename }}</mat-card-title>
+        <mat-card-subtitle>{{ vehicles.model }}</mat-card-subtitle>
+      </mat-card-header>
+      <hr />
+      <mat-card-content>
+        <p>
+          <b> Mileage: {{ vehicles.mileage }} </b>
+        </p>
+        <p>
+          <b> Total Expenditure: {{ vehicles.price }} </b>
+        </p>
+      </mat-card-content>
+      <mat-card-actions style="background-color: yellow">
+        <a href="Main/Details/{{ vehicles._id }}" class="viewbtn">View</a
+        ><a href="update-vehicle/{{ vehicles._id }}" class="editbtn">Edit</a>
+      </mat-card-actions>
+    </mat-card>
+    <a href="Main/Manage-Vehicles">See More>></a>
+  </mat-grid-tile>
+</mat-grid-list>
+<hr />
+<div class="container">
+  <h2 style="color: blue">Monthly Expense Analysis</h2>
+</div>
+<mat-grid-list cols="2" rowHeight="500px">
+  <mat-grid-tile>
+    <canvas baseChart class="chart" type="line" [data]="lineChartData"></canvas>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <canvas
+      baseChart
+      [legend]="true"
+      [datasets]="chartData"
+      [labels]="chartLabels"
+    >
+    </canvas>
+  </mat-grid-tile>
+</mat-grid-list>

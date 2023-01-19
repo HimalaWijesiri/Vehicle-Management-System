@@ -1,0 +1,28 @@
+
+<mat-sidenav-container>
+    <mat-sidenav #sidebar mode="side" opened="">
+        <h1 style="margin-left:35%; margin-top: 32px;"><b>Menu</b></h1>
+        <hr style="color: black;">
+        <mat-nav-list>
+            <a mat-list-item routerLink="Home"><mat-icon>dashboard</mat-icon> Dashboard</a>
+            <a mat-list-item routerLink="Add-Vehicles"><mat-icon>motorcycle</mat-icon> Add Vehicle</a>
+            <a mat-list-item routerLink="Manage-Vehicles"><mat-icon>extension</mat-icon> Manage Vehicles</a>
+            <a mat-list-item routerLink="View-Vehicle-Details"><mat-icon>visibility</mat-icon> View Vehicle Details</a>
+            <a mat-list-item routerLink="Profile"><mat-icon>account_circle</mat-icon> Profile</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar>
+            <mat-toolbar-row>
+                
+                    <mat-icon (click)="sidebar.toggle()">menu</mat-icon>
+                
+                <span class="span"><b>Vehicle Management System</b></span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <hr>
+        <div style="height: 88vh;">
+           <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-12 text-center"><h2>Detailed Vehicle List</h2></div>
+</div>
+
+<div class="row">
+    <table class="table">
+        <thead>
+            <th>
+                Vehicle Name
+            </th>
+            <th> 
+                Options
+            </th>
+            <tbody>   
+                <tr *ngFor="let vehicles of vehicles">
+                    <td>{{vehicles.vehiclename}}</td>
+                    <td><a href="Add-Vehicle-Details/{{vehicles._id}}" class="btn btn-primary">Add</a> |<a href="Main/Details/{{vehicles._id}}" class="btn btn-success">View</a></td>
+            </tr>
+        </tbody>
+</table>
+</div>
