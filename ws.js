@@ -1,39 +1,25 @@
-import WebSocket from 'ws';
+let express = require("express");
+let path = require("path");
+let http = require("http");
+let socketIo = require("socket.io");
 
-const wss = new WebSocket.Server({
-  port: 3000,
-});
+//setting up the server 
+let app = express();
+let server = http.createServer(app);
 
-wss.on('connection', (ws) => {
-  ws.send('Welcome to the server, enjoy :)');
+//setup statistics
+app.use(express.static(path.join(__dirname, "Vehicle-Management-System")));
 
-  ws.on('message', (data) => {
-    let message;
+//websocket setup
+let io = socketIo(server);
 
-    try {
-      message = JSON.parse(data);
-    } catch (e) {
-      sendError(ws, 'Wrong format');
+io.on("connection", function(socket){
 
-      return;
-    }
+   socket.emit("connection Confirmed");
 
-    if (message.type === 'NEW_MESSAGE') {
-      wss.clients.forEach((client) => {
-        if (client !== ws && client.readyState === WebSocket.OPEN) {
-          client.send(data);
-        }
-      });
-    }
+   socket.on("request", function(msg){
 
-  });
-});
+    socket.emit("Server Responses");
 
-const sendError = (ws, message) => {
-  const messageObject = {
-    type: 'ERROR',
-    payload: message,
-  };
-
-  ws.send(JSON.stringify(messageObject));
-};
+   })
+})

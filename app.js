@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-
+const ws = require("./ws");
 const port = process.env.port || 8080 //this is used for server port 
 const authRoute = require('./Routes/auth-route');
 const mongoose = require('mongoose');
