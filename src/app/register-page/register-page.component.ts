@@ -12,11 +12,12 @@ export class RegisterPageComponent  implements OnInit {
   message:string ='';
   isProcess:boolean = false;
   className = 'd-none'
+  
 constructor(private fb:FormBuilder, private auth:AuthService) {
   this.signupForm = this.fb.group({
     'firstname':['',Validators.required],
     'surname':['',Validators.required],
-    'email':['',Validators.required],
+    'email':['',[Validators.required, Validators.email]],
     'password':['',Validators.required],
     'cpass':['',Validators.required],
   })

@@ -9,14 +9,14 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
-
+  
   loginForm!:FormGroup
 
 constructor(private fb:FormBuilder, private auth:AuthService, private router:Router) {
 
   this.loginForm = this.fb.group({
 
-    'email':['',Validators.required],
+    'email':['',[Validators.required, Validators.email]],
     'password':['',Validators.required],
   
   })

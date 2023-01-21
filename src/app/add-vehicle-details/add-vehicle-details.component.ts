@@ -23,7 +23,7 @@ constructor(private fb:FormBuilder, private auth:AuthService, private route: Act
     'v_name':['',Validators.required],
     'date':['',Validators.required],
     'description':['',Validators.required],
-    'amount':['',Validators.required]
+    'amount':['',Validators.required] 
 
   })
  }
