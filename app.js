@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const ws = require("./ws");
+//const ws = require("./ws");
 const port = process.env.port || 8080 //this is used for server port 
 const authRoute = require('./Routes/auth-route');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
 
 mongoose.connect('mongodb+srv://himala007:codingmedusa007@cluster0.cxbiykq.mongodb.net/Vehicle-Management-System', (err)=>{
     if(err){
@@ -29,3 +31,21 @@ app.get('/', (req,res)=>{
 app.listen(port, ()=>{
     console.log("Node server is connected: ",port)
 })
+
+io.on('connection', function(socket) {
+    console.log('A user connected');
+    
+    // Handle chat messages
+    socket.on('message', function(msg) {
+      io.emit(' message', msg);
+    });
+  
+    // Handle disconnections
+    socket.on('disconnect', function() {
+      console.log('A user disconnected');
+    });
+  });
+  
+  server.listen(3000, function() {
+    console.log('listening on : 3000');
+  });

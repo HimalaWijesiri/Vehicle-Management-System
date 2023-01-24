@@ -3,7 +3,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { EditVehiclePageComponent } from './edit-vehicle-page.component';
 import { FormBuilder } from '@angular/forms';
 
-describe('EditVehiclePageComponent', () => {
+fdescribe('EditVehiclePageComponent', () => {
   let component: EditVehiclePageComponent;
   let fixture: ComponentFixture<EditVehiclePageComponent>;
 

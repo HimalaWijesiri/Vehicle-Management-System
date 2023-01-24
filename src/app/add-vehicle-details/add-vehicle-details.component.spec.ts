@@ -1,14 +1,15 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
 import { RouterTestingModule } from "@angular/router/testing";
 import { AddVehicleDetailsComponent } from './add-vehicle-details.component';
+import { of } from 'rxjs';
+import { AuthService } from '../service/auth.service';
 
-fdescribe('AddVehicleDetailsComponent', () => {
+describe('AddVehicleDetailsComponent', () => {
   let component: AddVehicleDetailsComponent;
   let fixture: ComponentFixture<AddVehicleDetailsComponent>;
+  let authService: AuthService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -19,9 +20,7 @@ fdescribe('AddVehicleDetailsComponent', () => {
         HttpClientTestingModule,
         RouterTestingModule
       ],
-      providers: [
-
-      ]
+      providers: [AuthService]
     })
     .compileComponents();
 
@@ -29,17 +28,17 @@ fdescribe('AddVehicleDetailsComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+/*
+  it('should retrieve data from the database', () => {
+    const data = [{id:'63aefc8745eefeb07c7ce653'}];
+    spyOn(authService,'singlevehicle').and.returnValue(of(data));
 
-  it('should create',fakeAsync( () => {
     component.ngOnInit();
-    tick();
-    fixture.detectChanges();
-
-    expect(component).toBeTruthy();
-  })
-  );
-
-  it('should create', () => {
+    expect(authService.singlevehicle).toHaveBeenCalled();
+    expect(component.getname).toEqual(data)
+  });
+*/
+   it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

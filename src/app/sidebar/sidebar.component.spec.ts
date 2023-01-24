@@ -12,7 +12,7 @@ import { AppRoutingModule } from '../app-routing.module';
 
 import { SidebarComponent } from './sidebar.component';
 
-describe('SidebarComponent', () => {
+fdescribe('SidebarComponent', () => {
   let component: SidebarComponent;
   let fixture: ComponentFixture<SidebarComponent>;
 

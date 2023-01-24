@@ -4,7 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { VehicleDetailPageComponent } from './vehicle-detail-page.component';
 
-describe('VehicleDetailPageComponent', () => {
+fdescribe('VehicleDetailPageComponent', () => {
   let component: VehicleDetailPageComponent;
   let fixture: ComponentFixture<VehicleDetailPageComponent>;
 

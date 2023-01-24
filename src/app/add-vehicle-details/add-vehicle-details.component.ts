@@ -33,7 +33,7 @@ constructor(private fb:FormBuilder, private auth:AuthService, private route: Act
 
   //console.log(this.id);
   this.auth.singlevehicle(this.id).subscribe(data=>{
-    console.log(data);
+    //console.log(data);
     this.getname = data;
   })
   

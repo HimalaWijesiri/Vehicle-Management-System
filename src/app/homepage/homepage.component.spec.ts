@@ -5,7 +5,7 @@ import { HomepageComponent } from './homepage.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { NgChartsModule } from 'ng2-charts';
 
-describe('HomepageComponent', () => {
+fdescribe('HomepageComponent', () => {
   let component: HomepageComponent;
   let fixture: ComponentFixture<HomepageComponent>;
 

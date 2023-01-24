@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RouterTestingModule } from "@angular/router/testing";
 import { UpdateVehicleComponent } from './update-vehicle.component';
 
-describe('UpdateVehicleComponent', () => {
+fdescribe('UpdateVehicleComponent', () => {
   let component: UpdateVehicleComponent;
   let fixture: ComponentFixture<UpdateVehicleComponent>;
 

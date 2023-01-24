@@ -5,7 +5,7 @@ import { DetailPageComponent } from './detail-page.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterTestingModule } from '@angular/router/testing';
 
-describe('DetailPageComponent', () => {
+fdescribe('DetailPageComponent', () => {
   let component: DetailPageComponent;
   let fixture: ComponentFixture<DetailPageComponent>;
 

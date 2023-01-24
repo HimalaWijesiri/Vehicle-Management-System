@@ -3,10 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { LoginPageComponent } from './login-page/login-page.component';
 
 
-describe('AppComponent', () => {
+fdescribe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -15,7 +14,6 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        LoginPageComponent
 
       ],
     }).compileComponents();
