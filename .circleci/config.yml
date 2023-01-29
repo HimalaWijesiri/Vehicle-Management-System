@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       - image: node:16
-      browsers: 'Chrome'
+      CHROME_BIN: C:\Program Files\Google\Chrome\Application\
     steps:
       - checkout
       - run:
