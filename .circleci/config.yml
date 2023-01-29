@@ -1,0 +1,36 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: node:10
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Run tests
+          command: npm test
+      - run:
+          name: Build application
+          command: npm run build
+  deploy:
+    docker:
+      - image: mongo:3.6
+    steps:
+      - run:
+          name: Start MongoDB
+          command: mongod
+      - run:
+          name: Deploy to production
+          command: npm run deploy
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build

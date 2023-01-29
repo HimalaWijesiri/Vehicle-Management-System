@@ -1,8 +1,13 @@
-import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { HttpClientTestingModule} from '@angular/common/http/testing';
+import {
+  ComponentFixture,
+  fakeAsync,
+  TestBed,
+  tick,
+} from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ProfileComponent } from './profile.component';
 import { RouterTestingModule } from '@angular/router/testing';
-
+import { By } from '@angular/platform-browser';
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
@@ -10,19 +15,19 @@ describe('ProfileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProfileComponent ],
-      imports: [
-        HttpClientTestingModule,
-        RouterTestingModule,
-      
-      ],
-    })
-    .compileComponents();
+      declarations: [ProfileComponent],
+      imports: [HttpClientTestingModule, RouterTestingModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+  /*
 
 it('should create', fakeAsync(() =>{
   component.ngOnInit();
@@ -31,12 +36,7 @@ it('should create', fakeAsync(() =>{
   expect(component).toBeTruthy();
 }))
 
-/*
-
-it('should create', () => {
-  expect(component).toBeTruthy();
-});
-
+  
   it('should assign a value to the property', () => {
     component.getProfile();
     expect(component.data).toBeDefined();
@@ -73,7 +73,4 @@ it('should create', () => {
     expect(authService.getProfile).toHaveBeenCalled();
   });
 */
-
-
-
 });
