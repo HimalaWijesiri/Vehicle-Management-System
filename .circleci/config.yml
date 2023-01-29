@@ -4,6 +4,8 @@ jobs:
   build:
     docker:
       - image: node:16
+      environment:
+      CHROME_BIN: /usr/bin/google-chrome
     steps:
       - checkout
       - run:
