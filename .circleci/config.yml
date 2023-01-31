@@ -4,21 +4,16 @@ jobs:
   build:
     docker:
       - image: node:16
+
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: npm install
-  deploy:
-    - run:
-        name: Deploy to production
-        command: npm run deploy
 
-workflows:
-  version: 2
-  build_and_deploy:
-    jobs:
-      - build
-      - deploy:
-          requires:
-            - build
+      - run:
+          name: Install Dependencies
+          command: |
+            npm install
+
+      - run:
+          name: Build Project
+          command: |
+            npm run build
