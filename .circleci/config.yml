@@ -4,13 +4,14 @@ jobs:
   build:
     docker:
       - image: node:16
+    environment:
+      CHROME_BIN: "C:/Program Files/Google/Chrome/Application/chrome.exe"
+    steps:
       - checkout
       - run:
           name: Install dependencies
           command: npm install
       - run:
-      environment:
-      CHROME_BIN: C:\Program Files\Google\Chrome\Application\chrome.exe
           name: Run tests
           command: npm test
       - run:
