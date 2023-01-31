@@ -15,5 +15,3 @@ jobs:
           name: Run tests
           command: |
             npm test
-    environment:
-      CHROME_BIN: "C:\Program Files\Google\Chrome\Application\chrome.exe"
