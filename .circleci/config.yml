@@ -4,6 +4,8 @@ jobs:
   build:
     docker:
       - image: node:16
+    environment:
+      CHROME_BIN: "C:/Program Files/Google/Chrome/Application/chrome.exe"
     steps:
       - checkout
       - run:
@@ -15,8 +17,6 @@ jobs:
       - run:
           name: Build application
           command: npm run build
-    environment:
-      CHROME_BIN: "C:/Program Files/Google/Chrome/Application/chrome.exe"
   deploy:
     docker:
       - image: mongo:3.6
