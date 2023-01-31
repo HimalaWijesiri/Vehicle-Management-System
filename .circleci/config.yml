@@ -10,15 +10,9 @@ jobs:
           name: Install dependencies
           command: npm install
   deploy:
-    docker:
-      - image: mongo:3.6
-    steps:
-      - run:
-          name: Start MongoDB
-          command: mongod
-      - run:
-          name: Deploy to production
-          command: npm run deploy
+    - run:
+        name: Deploy to production
+        command: npm run deploy
 
 workflows:
   version: 2
