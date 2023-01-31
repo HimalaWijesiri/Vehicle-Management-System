@@ -9,9 +9,6 @@ jobs:
       - run:
           name: Install dependencies
           command: npm install
-      - run:
-          name: Build application
-          command: npm run build
   deploy:
     docker:
       - image: mongo:3.6
