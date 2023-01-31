@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: node:16
     environment:
-      CHROME_BIN: C:\Program Files\Google\Chrome\Application\chrome.exe
+      CHROME_BIN: /usr/bin/google-chrome
     steps:
       - checkout
       - run:
